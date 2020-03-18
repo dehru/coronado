@@ -157,7 +157,7 @@
     <nameField>
         <label>Case Name</label>
         <trackFeedHistory>true</trackFeedHistory>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Cases</pluralLabel>
     <searchLayouts/>

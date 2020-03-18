@@ -1,0 +1,100 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Case__c",
+                "referenceId": "Case__cRef1"
+            },
+            "Count__c": 5,
+            "Date__c": "2020-03-10"
+        },
+        {
+            "attributes": {
+                "type": "Case__c",
+                "referenceId": "Case__cRef2"
+            },
+            "Count__c": 15,
+            "Date__c": "2020-03-12"
+        },
+        {
+            "attributes": {
+                "type": "Case__c",
+                "referenceId": "Case__cRef3"
+            },
+            "Count__c": 24,
+            "Date__c": "2020-03-14"
+        },
+        {
+            "attributes": {
+                "type": "Case__c",
+                "referenceId": "Case__cRef4"
+            },
+            "Count__c": 0,
+            "Date__c": "2020-03-08"
+        },
+        {
+            "attributes": {
+                "type": "Case__c",
+                "referenceId": "Case__cRef5"
+            },
+            "Count__c": 4,
+            "Date__c": "2020-03-09"
+        },
+        {
+            "attributes": {
+                "type": "Case__c",
+                "referenceId": "Case__cRef6"
+            },
+            "Count__c": 17,
+            "Date__c": "2020-03-11"
+        },
+        {
+            "attributes": {
+                "type": "Case__c",
+                "referenceId": "Case__cRef7"
+            },
+            "Count__c": 6,
+            "Date__c": "2020-03-06"
+        },
+        {
+            "attributes": {
+                "type": "Case__c",
+                "referenceId": "Case__cRef8"
+            },
+            "Count__c": 28,
+            "Date__c": "2020-03-13"
+        },
+        {
+            "attributes": {
+                "type": "Case__c",
+                "referenceId": "Case__cRef9"
+            },
+            "Count__c": 29,
+            "Date__c": "2020-03-16"
+        },
+        {
+            "attributes": {
+                "type": "Case__c",
+                "referenceId": "Case__cRef10"
+            },
+            "Count__c": 0,
+            "Date__c": "2020-03-07"
+        },
+        {
+            "attributes": {
+                "type": "Case__c",
+                "referenceId": "Case__cRef11"
+            },
+            "Count__c": 30,
+            "Date__c": "2020-03-15"
+        },
+        {
+            "attributes": {
+                "type": "Case__c",
+                "referenceId": "Case__cRef12"
+            },
+            "Count__c": 2,
+            "Date__c": "2020-03-05"
+        }
+    ]
+}

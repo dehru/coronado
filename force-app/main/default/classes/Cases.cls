@@ -7,8 +7,10 @@ public with sharing class Cases {
         return [
         SELECT
             Name,
-            Count__c
-            FROM Case__c
+            Count__c,
+            Date__c
+            FROM Case__c 
+            ORDER BY Date__c
         ];
     }
 }

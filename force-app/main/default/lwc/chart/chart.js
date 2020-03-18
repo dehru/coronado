@@ -6,7 +6,9 @@ import { loadScript } from 'lightning/platformResourceLoader';
 export default class Chart extends LightningElement {
     @track isChartJsInitialized;
     chart;
-    cases;
+    casesPerDay = [];
+    totalPerDay = [];
+    labels = [];
 
     config = {
         type: "line",
@@ -14,7 +16,7 @@ export default class Chart extends LightningElement {
           labels: [],
           datasets: [
             {
-              label: "Actual Cases",
+              label: "COVID-19 Cases",
               data: [],
               borderWidth: 1,
               backgroundColor: "red",
@@ -38,8 +40,17 @@ export default class Chart extends LightningElement {
     @wire(getCases)
     doGetCases(response) {
         if (response.data) {
-        this.cases = response.data.map( day => day.Count__c );
-        console.log(this.cases);
+            // per day
+        this.casesPerDay = response.data.map( day => day.Count__c );
+        const reducer = (accumulator, currentValue) => {
+            console.log(accumulator, currentValue)
+            const total = accumulator + currentValue.Count__c;
+            this.totalPerDay.push(total);
+            return total;
+        }
+        response.data.reduce(reducer, 0);
+        this.labels = response.data.map( day => day.Date__c );
+        console.log(this.labels, this.totalPerDay);
         this.error = undefined;
         this.updateChart();
         } else if (response.error) {
@@ -50,8 +61,8 @@ export default class Chart extends LightningElement {
     }
 
     updateChart() {
-        this.chart.data.datasets[0].data = this.cases;
-        this.chart.data.labels = this.cases;
+        this.chart.data.datasets[0].data = this.totalPerDay;
+        this.chart.data.labels = this.labels;
         this.chart.update();
     }
 
@@ -69,8 +80,8 @@ export default class Chart extends LightningElement {
             this.template.querySelector('div.chart').appendChild(canvas);
             const ctx = canvas.getContext('2d');
             this.chart = new window.Chart(ctx, this.config);
-            // this.chart.canvas.parentNode.style.height = '100%';
-            // this.chart.canvas.parentNode.style.width = '100%';
+            this.chart.canvas.parentNode.style.height = '100%';
+            this.chart.canvas.parentNode.style.width = '100%';
         }).catch(error => {
             console.error(error);
         });
